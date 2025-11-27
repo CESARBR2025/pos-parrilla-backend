@@ -1,0 +1,82 @@
+# ============================
+# Python
+# ============================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# IDE specific
+.vscode/
+.idea/
+
+# Byte-compiled / optimized files
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Cache
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+.cache/
+pytest_cache/
+
+# MyPy / Pylance / Ruff / Type checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+
+# Environment configuration
+.env
+.env.*
+*.env
+
+# Supabase
+.supabase/
+supabase/.temp/
+supabase/.branches/
+
+# Local SQLite (por si acaso)
+*.db
+*.sqlite
+
+# FastAPI / Uvicorn reload
+*.pid
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Coverage
+htmlcov/
+.coverage
+.coverage.*
+
+# Reports
+report.xml
+coverage.xml
+
+# Jupyter
+.ipynb_checkpoints/
+
+# local configs
+*.local
+config.local.json
+
