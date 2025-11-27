@@ -1,3 +1,6 @@
+#Son tipado, validacion, estructura de entrada/salida
+#Sirven para: definir que recibe un endpoint, que devuelve, validar datos, documentar en swagger
+
 from  pydantic import BaseModel
 from typing import Optional
 from datetime import datetime

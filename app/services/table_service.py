@@ -18,14 +18,6 @@ def list_tables() -> List[Dict]:
     except Exception as e:
         raise RuntimeError(f"Error al listar mesas: {str(e)}")
 
-def create_table(name: str, capacity: int = 4) -> Dict:
-  payload = {"name": name, "capacity": capacity, "status": "libre", "updated_at": datetime.utcnow()}
-  try:
-    res = client_supabase.table("tables").insert(payload).select("*").execute()
-    return res.data
-  except Exception as e:
-    raise RuntimeError(f"Error al listar mesas: {str(e)}")
-
 def generate_tables(total: int) -> int:
     from datetime import datetime
 
@@ -54,7 +46,9 @@ def generate_tables(total: int) -> int:
 
 
 def updated_table_status(table_id: int, status: str) -> Dict:
-    payload = {"status" : status, "updated_at": datetime.utcnow().isoformat()}
+    
+    payload = {"status" : status, 
+               "updated_at": datetime.utcnow().isoformat()}
 
 
     # actualizar
