@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.routers import tables
+from app.routers import groups_food
 from app.ws import tables_ws
 from app.core.config import FRONTEND_ORIGINS
 
@@ -15,4 +16,5 @@ app.add_middleware(
 )
 
 app.include_router(tables.router)
+app.include_router(groups_food.router)
 app.include_router(tables_ws.router)

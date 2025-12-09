@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from typing import List
-from app.models.table import TableCreate, TableOut, TableUpdateStatus
+from app.schemas.tables_schema import TableCreate, TableOut, TableUpdateStatus
 from app.services.table_service import list_tables, create_table, generate_tables, updated_table_status
 from app.ws.manager import manager
 import json

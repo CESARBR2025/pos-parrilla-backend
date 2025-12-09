@@ -29,11 +29,11 @@ def create_table(name: str, capacity: int = 4) -> Dict:
 def generate_tables(total: int) -> int:
     from datetime import datetime
 
-    # 1. Borrar todas las mesas
+    # 1. Ejectutar funcion que trunca la tabla de tables
     try:
-        client_supabase.table("tables").delete().neq("id", 0).execute()
+       client_supabase.rpc("restart_tables_sequence").execute()
     except Exception as e:
-        raise RuntimeError(f"Error deleting existing tables: {str(e)}")
+       raise RuntimeError(f"Error calling reset_tables RPC: {str(e)} " )
 
     # 2. Crear nuevas mesas
     to_insert = []

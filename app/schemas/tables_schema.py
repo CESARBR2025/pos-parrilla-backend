@@ -1,3 +1,10 @@
+"""
+Schemas (Pydantic)
+Definen como entran y salen lso datos
+Te permiten estrcuturar el diseo antes de escribir logica
+
+"""
+
 from  pydantic import BaseModel
 from typing import Optional
 from datetime import datetime
