@@ -7,11 +7,11 @@ from app.core.config import FRONTEND_ORIGINS
 app = FastAPI(title="POS BACKEND")
 
 app.add_middleware(
-  CORSMiddleware,
-  allow_origins=FRONTEND_ORIGINS,
-  allow_credentials=True,
-  allow_methods=["*"],
-  allow_headers=["*"]
+    CORSMiddleware,
+    allow_origins=FRONTEND_ORIGINS,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 app.include_router(tables.router)
