@@ -1,4 +1,5 @@
 #Configuración del proyecto
+# CORS, lectura de variables de entorno, configuracion global de backend
 
 from pathlib import Path
 from dotenv import load_dotenv
