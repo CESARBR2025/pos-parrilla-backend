@@ -10,7 +10,7 @@ router = APIRouter(
     tags=["Food Products"]
 )
 
-@router.get("/{group_Id}/product", response_model=list[ProductOut])
+@router.get("/{group_id}/product", response_model=list[ProductOut])
 def get_products_by_group(group_id: UUID):
     return list_foodProduct(group_id)
 
