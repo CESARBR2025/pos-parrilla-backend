@@ -41,6 +41,6 @@ class ProductOut(ProductBase):
     order_id: int
     created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None
-
+    price: float
     class Config:
         orm_mode = True
