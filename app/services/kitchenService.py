@@ -4,6 +4,7 @@ from supabase import Client
 from app.models.kitchen import KitchenOrderCreate
 from app.db.supabase import client_supabase
 
+
 #Crear orden de cocina
 def create_order_kitchen(data: KitchenOrderCreate):
     try:
@@ -19,7 +20,11 @@ def create_order_kitchen(data: KitchenOrderCreate):
 
         res = (client_supabase.table("kitchen_orders").insert(payload).execute())
 
+        
+
         return res.data[0]
+    
+        
     except Exception as e:
         raise RuntimeError(f"Error al crear la orden en cocina: {str(e)}")
     

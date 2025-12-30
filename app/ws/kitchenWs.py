@@ -1,5 +1,5 @@
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
-from app.ws.kitchenManager import kitchen_manager
+from app.ws.controlers.kitchenManager import kitchen_manager
 
 router = APIRouter()
 
