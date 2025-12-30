@@ -6,7 +6,7 @@ from app.services.table_service import (
     generate_tables,
     updated_table_status,
 )
-from app.ws.manager import manager
+
 import json
 
 router = APIRouter(prefix="/tables", tags=["Tables"])
@@ -28,9 +28,7 @@ async def post_generate(total: int):
         added = generate_tables(total)
         # after generation send fresh list
         tables = list_tables()
-        await manager.broadcast(
-            json.dumps({"event": "tables_generated", "data": tables})
-        )
+       
 
         return {"added": added, "total_expected": total}
     except Exception as e:

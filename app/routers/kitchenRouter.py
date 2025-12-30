@@ -14,6 +14,8 @@ from app.services.kitchenService import (
     create_order_kitchen, get_kitchen_orders, update_kitchen_order_status
 )
 
+from app.ws.kitchenManager import kitchen_manager
+
 #Base
 router = APIRouter(
     prefix="/kitchen",
@@ -22,9 +24,15 @@ router = APIRouter(
 
 #Post
 @router.post("/orders", response_model=KitchenOrderOut, status_code=201)
-def send_to_kitchen(data: KitchenOrderCreate):
+async def send_to_kitchen(data: KitchenOrderCreate):
     try:
-        return create_order_kitchen(data)
+        order = create_order_kitchen(data)
+        #Notificar en tiempo real 
+        await kitchen_manager.broadcast({
+            "type": "KITCHEN_ORDER_CREATED",
+            "payload": order
+        })
+        return order
     except RuntimeError as e:
         raise HTTPException(status_code=400, detail=str(e))
 

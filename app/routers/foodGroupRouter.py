@@ -18,7 +18,7 @@ from app.services.food_group_service import (
 )
 
 
-from app.ws.manager import manager
+
 import json
 
 router = APIRouter(prefix="/foodGroup", tags=["FoodGroups"])
